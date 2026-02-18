@@ -40,6 +40,33 @@ The purpose is **defensive only**: preventing ransomware-style attacks and prote
 - Baseline file hashes for monitored directories
 - Access to the server or domain you want to protect
 
+## Workflow diagram
+     +-------------------+
+     |                   |
+     |   Server / Domain |
+     |                   |
+     +---------+---------+
+               |
+               v
+     +-------------------+
+     |                   |
+     | Wazuh Agent       |  <-- File Integrity Monitoring (FIM)
+     |                   |
+     +---------+---------+
+               |
+               v
+     +-------------------+
+     |                   |
+     | Detection Engine  |  <-- Behavioral Detection
+     | (File & Process)  |
+     +---------+---------+
+               |
+    +----------+-----------+
+    |                      |
+    v                      v
+
+
+
 ## Contributing
 This project focuses on **defensive security only**. Contributions should aim to improve monitoring, detection, alerting, containment, or recovery procedures.
 
